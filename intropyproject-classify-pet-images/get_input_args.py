@@ -38,6 +38,15 @@ def get_input_args():
     Returns:
      parse_args() -data structure that stores the command line arguments object  
     """
+    folder = input("Enter the folder name [pet_images]: ")
+    if(folder == ""):
+        folder = "pet_images"
+    model = input("Enter the model name [vgg]: ")
+    if(model == ""):
+        model = "vgg"
+    dogfile = input("Enter the dog file name [dognames.txt]: ")
+    if(dogfile == ""):
+        dogfile = "dognames.txt"
     # Replace None with parser.parse_args() parsed argument collection that 
     # you created with this function 
-    return None
+    return argparse.parse_args([folder, model, dogfile])
